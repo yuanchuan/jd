@@ -58,10 +58,12 @@ func (s *Storage) Exist(key string) bool {
 }
 
 func (s *Storage) Rename(oldkey string, newkey string) {
-	val := s.Get(oldkey)
-	s.Set(newkey, val)
-	s.Del(oldkey)
-	s.write()
+    if s.Exist(oldkey) && len(newkey) > 0 {
+        val := s.Get(oldkey)
+        s.Set(newkey, val)
+        s.Del(oldkey)
+        s.write()
+    }
 }
 
 func (s *Storage) Clear() {
