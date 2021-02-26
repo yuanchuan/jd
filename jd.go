@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"./storage"
 	"github.com/mitchellh/go-homedir"
+	"github.com/yuanchuan/jd/storage"
 )
 
 const (

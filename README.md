@@ -15,17 +15,17 @@ $ jd
 
 ## Setup
 
-* Build with `go build` or just use make.
+* Build with `go build`
 
   ```bash
-  make
+  go build
   ```
 
 * Create a function to your `.zshrc` or `.bashrc`.
 
   ```bash
   function jd {
-     builtin cd "$(/path/to/the/project/bin/jd $@)"
+     builtin cd "$(/path/to/the/project/jd $@)"
   }
   ```
 
