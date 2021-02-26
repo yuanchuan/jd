@@ -4,28 +4,32 @@ A command line tool for jumping to a directory quickly.
 
 ```bash
 # Add an alias for the current directory
-$ jd -a name
+jd -a name
 
 # Jump to it from anywhere
-$ jd name
+jd name
 
 # List all aliases
-$ jd
+jd
 ```
 
-## Setup
-
-* Build with `go build`
+## Installation
 
   ```bash
+  # install directly
+  go get github.com/yuanchuan/jd
+
+  # or build from source
   go build
   ```
 
-* Create a function to your `.zshrc` or `.bashrc`.
+## Setup
+
+  Create a function to your `.zshrc` or `.bashrc`.
 
   ```bash
   function jd {
-     builtin cd "$(/path/to/the/project/jd $@)"
+     builtin cd "$(/path/to/jd $@)"
   }
   ```
 
