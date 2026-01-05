@@ -17,7 +17,7 @@ jd
 
   ```bash
   # install directly
-  go get github.com/yuanchuan/jd
+  go install github.com/yuanchuan/jd@latest
 
   # or build from source
   go build

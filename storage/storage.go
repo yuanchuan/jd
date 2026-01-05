@@ -3,7 +3,6 @@ package storage
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"sync"
 )
@@ -72,7 +71,7 @@ func (s *Storage) Clear() {
 }
 
 func New(source string) *Storage {
-	content, err := ioutil.ReadFile(source)
+	content, err := os.ReadFile(source)
 	if err != nil {
 		if os.IsNotExist(err) {
 			content = createStorage(source)
@@ -110,7 +109,7 @@ func writeStorage(source string, content map[string]interface{}) {
 		panic(err)
 	}
 
-	if err = ioutil.WriteFile(source, result, 0644); err != nil {
+	if err = os.WriteFile(source, result, 0644); err != nil {
 		panic(err)
 	}
 }

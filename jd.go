@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/mitchellh/go-homedir"
 	"github.com/yuanchuan/jd/storage"
 )
 
@@ -15,7 +14,7 @@ const (
 	AppDesc = "Jump to a directory quickly by alias."
 )
 
-var home, err = homedir.Dir()
+var home, err = os.UserHomeDir()
 var db = storage.New(home + "/.jdstorage")
 
 func action(f *flag.Flag) {
